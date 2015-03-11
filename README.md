@@ -1,2 +1,4 @@
 # TTIPTuesday
-A simple website to make the #TTIPTuesday campaign easy
+This is the code for this website:
+
+http://marado.github.io/TTIPTuesday
