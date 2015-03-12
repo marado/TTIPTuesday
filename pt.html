@@ -29,17 +29,35 @@ a.twitter-hashtag-button:focus {
   border-color: #0089cb;
 }
 </style>
+<script>
+var tweetText = "#CETA e #TTIP = muitos perigos, poucos benef&iacute;cios, e marcha-atr&aacute;s imposs&iacute;vel. N&atilde;o vale a pena. #DigaN&atilde;o"; // TRANSLATE
+
+function buildTweet(whom) {
+	html = "<a target='_blank' href='https://twitter.com/intent/tweet?button_hashtag=TTIPTuesday&text=";
+	html += "@"+whom+" ";
+	var escaped=tweetText.replace(/@/g,"%40").replace(/#/g,"%23").replace(/ /g,"%20"); 
+	html += escaped;
+	html += "' class='twitter-hashtag-button'>";
+	html += "Enviar #TTIPTuesday"; // TRANSLATE
+	html += "</a>";
+	return html;
+}
+function loadSite() {
+	document.getElementById("tweet-text").innerHTML=tweetText;
+	document.getElementById("czorrinho").innerHTML=buildTweet("czorrinho");
+}
+</script>
 </head>
-<body>
+<body onLoad="loadSite();">
 (This is the Portuguese webpage. Check other languages <a href="index.html">here</a>.)
 <p/>
 Todas as ter&ccedil;as-feiras se enviam tweets aos Deputados do Parlamento Europeu sobre o #TTIP. Esta p&aacute;gina serve para facilitar esse trabalho.
 <p/>
+O texto a ser enviado: <span id="tweet-text"></span>
 <table>
 <tr><td><strong>Deputado</strong></td><td><strong>Enviar</strong></td></tr>
 
-<tr><td><a href="http://twitter.com/czorrinho">@czorrinho</a></td><td>
-<a target="_blank" href="https://twitter.com/intent/tweet?button_hashtag=TTIPTuesday&text=%40czorrinho%20%23CETA%20%26%20%23TTIP%20%3D%20muitos%20perigos%2C%20poucos%20benef%C3%ADcios%2C%20e%20ser%20marcha-atr%C3%A1s%20poss%C3%ADvel.%20N%C3%A3o%20vale%20a%20pena.%20%23SayNo" class="twitter-hashtag-button">Enviar #TTIPTuesday</a></td></tr>
+<tr><td><a href="http://twitter.com/czorrinho">@czorrinho</a></td><td><span id="czorrinho"></span></td></tr>
 
 </table>
 <p/>
