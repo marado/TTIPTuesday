@@ -1,5 +1,5 @@
 <html>
-<head><title>#TTIPTuesday - Portugu&ecirc;s</title>
+<head><title>#TTIPTuesday - Portugu&ecirc;s</title> <!-- TRANSLATE //-->
 <style>
 a.twitter-hashtag-button {
   display: inline-block;
@@ -21,6 +21,19 @@ a.twitter-hashtag-button {
   white-space: nowrap;
 }
  
+span, table, td, th {
+    border: 1px solid green;
+}
+
+th {
+    background-color: green;
+    color: white;
+}
+
+td {
+    padding: 3px 15px 3px 15px;
+}
+
 /* Color Highlight for keyboard navigation */
 a.twitter-share-button:focus,
 a.twitter-mention-button:focus,
@@ -29,6 +42,7 @@ a.twitter-hashtag-button:focus {
   border-color: #0089cb;
 }
 </style>
+<script type="text/javascript" src="MEPs.js"></script>
 <script>
 var tweetText = "#CETA e #TTIP = muitos perigos, poucos benef&iacute;cios, e marcha-atr&aacute;s imposs&iacute;vel. N&atilde;o vale a pena. #DigaN&atilde;o"; // TRANSLATE
 
@@ -42,25 +56,35 @@ function buildTweet(whom) {
 	html += "</a>";
 	return html;
 }
+
+function generateTable() {
+	var html = "<table><tr><td><strong>";
+	html += "Deputado"; // TRANSLATE
+	html += "</strong></td><td><strong>";
+	html += "Enviar"; // TRANSLATE
+	html += "</strong></td></tr>";
+	for (var i=0; i < ptMEPs.length ; i++) { // CONFIGURE-MEPs-HERE
+		html += "<tr><td><a href='http://twitter.com/" + ptMEPs[i] + "'>@" + ptMEPs[i] + "</a></td><td>" + buildTweet(ptMEPs[i]) + "</td></tr>";
+	}
+	html += "</table>";
+	document.getElementById("table-of-meps").innerHTML=html;
+}
+
 function loadSite() {
 	document.getElementById("tweet-text").innerHTML=tweetText;
-	document.getElementById("czorrinho").innerHTML=buildTweet("czorrinho");
+	generateTable();
 }
 </script>
 </head>
 <body onLoad="loadSite();">
 (This is the Portuguese webpage. Check other languages <a href="index.html">here</a>.)
 <p/>
-Todas as ter&ccedil;as-feiras se enviam tweets aos Deputados do Parlamento Europeu sobre o #TTIP. Esta p&aacute;gina serve para facilitar esse trabalho.
+Todas as ter&ccedil;as-feiras se enviam tweets aos Deputados do Parlamento Europeu sobre o #TTIP. Esta p&aacute;gina serve para facilitar esse trabalho. <!-- TRANSLATE //-->
 <p/>
-O texto a ser enviado: <span id="tweet-text"></span>
-<table>
-<tr><td><strong>Deputado</strong></td><td><strong>Enviar</strong></td></tr>
-
-<tr><td><a href="http://twitter.com/czorrinho">@czorrinho</a></td><td><span id="czorrinho"></span></td></tr>
-
-</table>
+O texto a ser enviado: <!-- TRANSLATE //-->
+<span id="tweet-text"></span> 
 <p/>
-<strong>Nota:</strong> Esta p&aacute;gina ainda est&aacute; a ser feita, a tabela encontra-se actualmente incompleta.
+<div id="table-of-meps"></div>
+<p/>
 </body>
 </html>
