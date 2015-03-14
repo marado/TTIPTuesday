@@ -42,7 +42,7 @@ a.twitter-hashtag-button:focus {
   border-color: #0089cb;
 }
 </style>
-<script type="text/javascript" src="MEPs.js"></script>
+<script type="text/javascript" src="MEPs-on-Twitter.js"></script>
 <script>
 var tweetText = "#CETA e #TTIP = muitos perigos, poucos benef&iacute;cios, e marcha-atr&aacute;s imposs&iacute;vel. N&atilde;o vale a pena. #DigaN&atilde;o"; // TRANSLATE
 
@@ -63,7 +63,7 @@ function generateTable() {
 	html += "</strong></td><td><strong>";
 	html += "Enviar"; // TRANSLATE
 	html += "</strong></td></tr>";
-	for (var i=0; i < ptMEPs.length ; i++) { // CONFIGURE-MEPs-HERE
+	for (var i=0; i < MEPsPortugal.length ; i++) { // CONFIGURE-MEPs-HERE
 		html += "<tr><td><a href='http://twitter.com/" + ptMEPs[i] + "'>@" + ptMEPs[i] + "</a></td><td>" + buildTweet(ptMEPs[i]) + "</td></tr>";
 	}
 	html += "</table>";
