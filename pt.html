@@ -63,8 +63,8 @@ function generateTable() {
 	html += "</strong></td><td><strong>";
 	html += "Enviar"; // TRANSLATE
 	html += "</strong></td></tr>";
-	for (var i=0; i < MEPsPortugal.length ; i++) { // CONFIGURE-MEPs-HERE
-		html += "<tr><td><a href='http://twitter.com/" + ptMEPs[i] + "'>@" + ptMEPs[i] + "</a></td><td>" + buildTweet(ptMEPs[i]) + "</td></tr>";
+	for (var i=0; i < MEPsPortugal.length ; i++) { // CONFIGURE-MEPs-HERE (and in the next line)
+		html += "<tr><td><a href='http://twitter.com/" + MEPsPortugal[i] + "'>@" + MEPsPortugal[i] + "</a></td><td>" + buildTweet(MEPsPortugal[i]) + "</td></tr>";
 	}
 	html += "</table>";
 	document.getElementById("table-of-meps").innerHTML=html;
