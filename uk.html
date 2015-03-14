@@ -1,0 +1,89 @@
+<html>
+<head><title>#TTIPTuesday - UK</title> <!-- TRANSLATE //-->
+<style>
+a.twitter-hashtag-button {
+  display: inline-block;
+  padding: 1px 3px 0 19px;
+  border: #ccc solid 1px;
+  border-radius: 3px;
+  background: #f8f8f8 url(bird.png) 2px 3px no-repeat;
+  background: url(bird.png) 2px 3px no-repeat,
+              -webkit-linear-gradient(#fff, #dedede);
+  background: url(bird.png) 2px 3px no-repeat,
+              linear-gradient(#fff, #dedede);
+  background-size: 16px 13px, auto auto;
+ 
+  /* Text */
+    font: bold 11px/17px Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  color: #333;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+  white-space: nowrap;
+}
+ 
+span, table, td, th {
+    border: 1px solid green;
+}
+
+th {
+    background-color: green;
+    color: white;
+}
+
+td {
+    padding: 3px 15px 3px 15px;
+}
+
+/* Color Highlight for keyboard navigation */
+a.twitter-share-button:focus,
+a.twitter-mention-button:focus,
+a.twitter-hashtag-button:focus {
+  outline: none;
+  border-color: #0089cb;
+}
+</style>
+<script type="text/javascript" src="MEPs-on-Twitter.js"></script>
+<script>
+var tweetText = "#CETA & #TTIP = many dangers, little benefits, and no U-Turn possible. It's not worth it. #SayNo"; // TRANSLATE
+function buildTweet(whom) {
+	html = "<a target='_blank' href='https://twitter.com/intent/tweet?button_hashtag=TTIPTuesday&text=";
+	html += "@"+whom+" ";
+	var escaped=tweetText.replace(/@/g,"%40").replace(/#/g,"%23").replace(/ /g,"%20"); 
+	html += escaped;
+	html += "' class='twitter-hashtag-button'>";
+	html += "Send #TTIPTuesday"; // TRANSLATE
+	html += "</a>";
+	return html;
+}
+
+function generateTable() {
+	var html = "<table><tr><td><strong>";
+	html += "MEP"; // TRANSLATE
+	html += "</strong></td><td><strong>";
+	html += "Send"; // TRANSLATE
+	html += "</strong></td></tr>";
+	for (var i=0; i < MEPsUK.length ; i++) { // CONFIGURE-MEPs-HERE (and in the next line)
+		html += "<tr><td><a href='http://twitter.com/" + MEPsUK[i] + "'>@" + MEPsUK[i] + "</a></td><td>" + buildTweet(MEPsUK[i]) + "</td></tr>";
+	}
+	html += "</table>";
+	document.getElementById("table-of-meps").innerHTML=html;
+}
+
+function loadSite() {
+	document.getElementById("tweet-text").innerHTML=tweetText;
+	generateTable();
+}
+</script>
+</head>
+<body onLoad="loadSite();">
+(This is the Portuguese webpage. Check other languages <a href="index.html">here</a>.)
+<p/>
+We're supposed to send tweets to MEPs every Tuesday about #TTIP. This webpage is meant to ease that work. <!-- TRANSLATE //-->
+<p/>
+The text to be sent: <!-- TRANSLATE //-->
+<span id="tweet-text"></span> 
+<p/>
+<div id="table-of-meps"></div>
+<p/>
+</body>
+</html>
