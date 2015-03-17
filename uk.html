@@ -1,5 +1,5 @@
 <html>
-<head><title>#TTIPTuesday - Portugu&ecirc;s</title> <!-- TRANSLATE //-->
+<head><title>#TTIPTuesday - UK</title> <!-- TRANSLATE //-->
 <style>
 a.twitter-hashtag-button {
   display: inline-block;
@@ -44,27 +44,26 @@ a.twitter-hashtag-button:focus {
 </style>
 <script type="text/javascript" src="MEPs-on-Twitter.js"></script>
 <script>
-var tweetText = "#CETA e #TTIP = muitos perigos, poucos benef&iacute;cios, e marcha-atr&aacute;s imposs&iacute;vel. N&atilde;o vale a pena. #DigaN&atilde;o"; // TRANSLATE
-
+var tweetText = "#CETA and #TTIP = many dangers, little benefits, and no U-Turn possible. It is not worth it. #SayNo"; // TRANSLATE
 function buildTweet(whom) {
 	html = "<a target='_blank' href='https://twitter.com/intent/tweet?button_hashtag=TTIPTuesday&text=";
 	html += "@"+whom+" ";
 	var escaped=tweetText.replace(/@/g,"%40").replace(/#/g,"%23").replace(/ /g,"%20"); 
 	html += escaped;
 	html += "' class='twitter-hashtag-button'>";
-	html += "Enviar #TTIPTuesday"; // TRANSLATE
+	html += "Send #TTIPTuesday"; // TRANSLATE
 	html += "</a>";
 	return html;
 }
 
 function generateTable() {
 	var html = "<table><tr><td><strong>";
-	html += "Deputado"; // TRANSLATE
+	html += "MEP"; // TRANSLATE
 	html += "</strong></td><td><strong>";
-	html += "Enviar"; // TRANSLATE
+	html += "Send"; // TRANSLATE
 	html += "</strong></td></tr>";
-	for (var i=0; i < MEPsPortugal.length ; i++) { // CONFIGURE-MEPs-HERE (and in the next line)
-		html += "<tr><td><a href='http://twitter.com/" + MEPsPortugal[i] + "'>@" + MEPsPortugal[i] + "</a></td><td>" + buildTweet(MEPsPortugal[i]) + "</td></tr>";
+	for (var i=0; i < MEPsUK.length ; i++) { // CONFIGURE-MEPs-HERE (and in the next line)
+		html += "<tr><td><a href='http://twitter.com/" + MEPsUK[i] + "'>@" + MEPsUK[i] + "</a></td><td>" + buildTweet(MEPsUK[i]) + "</td></tr>";
 	}
 	html += "</table>";
 	document.getElementById("table-of-meps").innerHTML=html;
@@ -77,11 +76,11 @@ function loadSite() {
 </script>
 </head>
 <body onLoad="loadSite();">
-(This is the Portuguese webpage. Check other countries <a href="index.html">here</a>.) <!-- TRANSLATE (actually, just change the country name) //-->
+(This is the UK webpage. Check other countries <a href="index.html">here</a>.) <!-- TRANSLATE (actually, just change the country name) //-->
 <p/>
-Todas as ter&ccedil;as-feiras se enviam tweets aos Deputados do Parlamento Europeu sobre o #TTIP. Esta p&aacute;gina serve para facilitar esse trabalho. <!-- TRANSLATE //-->
+We're supposed to send tweets to MEPs every Tuesday about #TTIP. This webpage is meant to ease that work. <!-- TRANSLATE //-->
 <p/>
-O texto a ser enviado: <!-- TRANSLATE //-->
+The text to be sent: <!-- TRANSLATE //-->
 <span id="tweet-text"></span> 
 <p/>
 <div id="table-of-meps"></div>
