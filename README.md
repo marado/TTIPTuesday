@@ -6,6 +6,13 @@ http://marado.github.io/TTIPTuesday
 ## Making it better
 
 ### Adding other countries
+
+If you don't want any technical details, but simply help by translating some
+sentences, please [read this](sentences.md). Adding your country is done in
+less than minutes, I promise!
+
+If you want technical details, please keep reading:
+
 If you want to add support to other countries, just copy uk.html into
 yourcountry.html and change:
 * translate all lines in the code which say "TRANSLATE"
