@@ -1,5 +1,5 @@
 <html>
-<head><title>#TTIPTuesday - Portugu&ecirc;s</title> <!-- TRANSLATE //-->
+<head><title>#TTIPTuesday</title> <!-- TRANSLATE //-->
 <style>
 a.twitter-hashtag-button {
   display: inline-block;
@@ -44,6 +44,11 @@ a.twitter-hashtag-button:focus {
 </style>
 <script type="text/javascript" src="MEPs-on-Twitter.js"></script>
 <script>
+var country = "Portugal";	// CONFIGURE-MEPs-HERE (it's just changing the country name)
+var send = "Enviar";		// TRANSLATE
+
+document.title = "#TTIPTuesday - " + country;
+
 var tweetText = "#CETA e #TTIP = muitos perigos, poucos benef&iacute;cios, e marcha-atr&aacute;s imposs&iacute;vel. N&atilde;o vale a pena. #DigaN&atilde;o"; // TRANSLATE
 
 function buildTweet(whom) {
@@ -52,7 +57,7 @@ function buildTweet(whom) {
 	var escaped=tweetText.replace(/@/g,"%40").replace(/#/g,"%23").replace(/ /g,"%20"); 
 	html += escaped;
 	html += "' class='twitter-hashtag-button'>";
-	html += "Enviar #TTIPTuesday"; // TRANSLATE
+	html += send + " #TTIPTuesday";
 	html += "</a>";
 	return html;
 }
@@ -61,7 +66,7 @@ function generateTable() {
 	var html = "<table><tr><td><strong>";
 	html += "Deputado"; // TRANSLATE
 	html += "</strong></td><td><strong>";
-	html += "Enviar"; // TRANSLATE
+	html += send;
 	html += "</strong></td></tr>";
 	for (var i=0; i < MEPsPortugal.length ; i++) { // CONFIGURE-MEPs-HERE (and in the next line)
 		html += "<tr><td><a href='http://twitter.com/" + MEPsPortugal[i] + "'>@" + MEPsPortugal[i] + "</a></td><td>" + buildTweet(MEPsPortugal[i]) + "</td></tr>";
@@ -71,13 +76,14 @@ function generateTable() {
 }
 
 function loadSite() {
+	document.getElementById("country").innerHTML=country;
 	document.getElementById("tweet-text").innerHTML=tweetText;
 	generateTable();
 }
 </script>
 </head>
 <body onLoad="loadSite();">
-(This is the Portuguese webpage. Check other countries <a href="index.html">here</a>.) <!-- TRANSLATE (actually, just change the country name) //-->
+(This is the webpage for <span id="country"></span>. Check other countries <a href="index.html">here</a>.)
 <p/>
 Todas as ter&ccedil;as-feiras se enviam tweets aos Deputados do Parlamento Europeu sobre o #TTIP. Esta p&aacute;gina serve para facilitar esse trabalho. <!-- TRANSLATE //-->
 <p/>

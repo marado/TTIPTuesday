@@ -1,5 +1,5 @@
 <html>
-<head><title>#TTIPTuesday - UK</title> <!-- TRANSLATE //-->
+<head><title>#TTIPTuesday</title>
 <style>
 a.twitter-hashtag-button {
   display: inline-block;
@@ -44,6 +44,11 @@ a.twitter-hashtag-button:focus {
 </style>
 <script type="text/javascript" src="MEPs-on-Twitter.js"></script>
 <script>
+var country = "UK"; // CONFIGURE-MEPs-HERE (it's just changing the country name)
+var send = "Send";	// TRANSLATE
+
+document.title = "#TTIPTuesday - " + country;
+
 var tweetText = "#CETA and #TTIP = many dangers, little benefits, and no U-Turn possible. It is not worth it. #SayNo"; // TRANSLATE
 function buildTweet(whom) {
 	html = "<a target='_blank' href='https://twitter.com/intent/tweet?button_hashtag=TTIPTuesday&text=";
@@ -51,7 +56,7 @@ function buildTweet(whom) {
 	var escaped=tweetText.replace(/@/g,"%40").replace(/#/g,"%23").replace(/ /g,"%20"); 
 	html += escaped;
 	html += "' class='twitter-hashtag-button'>";
-	html += "Send #TTIPTuesday"; // TRANSLATE
+	html += send + " #TTIPTuesday";
 	html += "</a>";
 	return html;
 }
@@ -60,7 +65,7 @@ function generateTable() {
 	var html = "<table><tr><td><strong>";
 	html += "MEP"; // TRANSLATE
 	html += "</strong></td><td><strong>";
-	html += "Send"; // TRANSLATE
+	html += send;
 	html += "</strong></td></tr>";
 	for (var i=0; i < MEPsUK.length ; i++) { // CONFIGURE-MEPs-HERE (and in the next line)
 		html += "<tr><td><a href='http://twitter.com/" + MEPsUK[i] + "'>@" + MEPsUK[i] + "</a></td><td>" + buildTweet(MEPsUK[i]) + "</td></tr>";
@@ -70,13 +75,14 @@ function generateTable() {
 }
 
 function loadSite() {
+	document.getElementById("country").innerHTML=country;
 	document.getElementById("tweet-text").innerHTML=tweetText;
 	generateTable();
 }
 </script>
 </head>
 <body onLoad="loadSite();">
-(This is the UK webpage. Check other countries <a href="index.html">here</a>.) <!-- TRANSLATE (actually, just change the country name) //-->
+(This is the webpage for <span id="country"></span>. Check other countries <a href="index.html">here</a>.)
 <p/>
 We're supposed to send tweets to MEPs every Tuesday about #TTIP. This webpage is meant to ease that work. <!-- TRANSLATE //-->
 <p/>
