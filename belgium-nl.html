@@ -45,11 +45,11 @@ a.twitter-hashtag-button:focus {
 <script type="text/javascript" src="MEPs-on-Twitter.js"></script>
 <script>
 var country = "Belgium"; // CONFIGURE-MEPs-HERE (it's just changing the country name)
-var send = "Envoyez";	// TRANSLATE
+var send = "Verstuur";	// TRANSLATE
 
 document.title = "#TTIPTuesday - " + country;
 
-var tweetText = "#CETA et #TTIP = beaucoup de dangers, peu de b&eacute;n&eacute;fices sans marche-arri&egrave;re possible. #DitesNon"; // TRANSLATE
+var tweetText = "#CETA en #TTIP = veel gevaren en weinig voordelen zonder uitweg. Het is het niet waard. #SayNo"; // TRANSLATE
 function buildTweet(whom) {
 	html = "<a target='_blank' href='https://twitter.com/intent/tweet?button_hashtag=TTIPTuesday&text=";
 	html += "@"+whom+" ";
@@ -63,7 +63,7 @@ function buildTweet(whom) {
 
 function generateTable() {
 	var html = "<table><tr><td><strong>";
-	html += "D&eacute;put&eacute; europ&eacute;en"; // TRANSLATE
+	html += "Europarlementariër"; // TRANSLATE
 	html += "</strong></td><td><strong>";
 	html += send;
 	html += "</strong></td></tr>";
@@ -82,11 +82,11 @@ function loadSite() {
 </script>
 </head>
 <body onLoad="loadSite();">
-(This is the webpage for <span id="country"></span>. Check other countries <a href="index.html">here</a>.)
+(This is the webpage for <span id="country"></span>. This is in Dutch, we have it in <a href="belgium-fr.html">French</a> too. Check other countries <a href="index.html">here</a>.)
 <p/>
-Nous cherchons &agrave; envoyer des tweets aux d&eacute;put&eacute;s europ&eacute;ens tous les mardis &agrave; propos du #TTIP. Cette page Internet est faite pour vous faciliter la t&acirc;che. <!-- TRANSLATE //-->
+Het is de bedoeling om elke dinsdag tweets over #TTIP naar de Nederlandse europarlementariërs te sturen. Deze website maakt het makkelijk om mee te doen. <!-- TRANSLATE //-->
 <p/>
-Le texte &agrave; envoyer: <!-- TRANSLATE //-->
+Kant-en-klare tekst voor de tweet: <!-- TRANSLATE //-->
 <span id="tweet-text"></span> 
 <p/>
 <div id="table-of-meps"></div>
