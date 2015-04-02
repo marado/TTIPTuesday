@@ -68,7 +68,7 @@ function generateTable() {
 	html += send;
 	html += "</strong></td></tr>";
 	for (var i=0; i < MEPsFinland.length ; i++) { // CONFIGURE-MEPs-HERE (and in the next line)
-		html += "<tr><td><a href='http://twitter.com/" + MEPFinland[i] + "'>@" + MEPsFinland[i] + "</a></td><td>" + buildTweet(MEPsFinland[i]) + "</td></tr>";
+		html += "<tr><td><a href='http://twitter.com/" + MEPsFinland[i] + "'>@" + MEPsFinland[i] + "</a></td><td>" + buildTweet(MEPsFinland[i]) + "</td></tr>";
 	}
 	html += "</table>";
 	document.getElementById("table-of-meps").innerHTML=html;
