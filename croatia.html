@@ -68,7 +68,7 @@ function generateTable() {
 	html += send;
 	html += "</strong></td></tr>";
 	for (var i=0; i < MEPsCroatia.length ; i++) { // CONFIGURE-MEPs-HERE (and in the next line)
-		html += "<tr><td><a href='http://twitter.com/" + MEPsUK[i] + "'>@" + MEPsUK[i] + "</a></td><td>" + buildTweet(MEPsCroatia[i]) + "</td></tr>";
+		html += "<tr><td><a href='http://twitter.com/" + MEPsCroatia[i] + "'>@" + MEPsCroatia[i] + "</a></td><td>" + buildTweet(MEPsCroatia[i]) + "</td></tr>";
 	}
 	html += "</table>";
 	document.getElementById("table-of-meps").innerHTML=html;
