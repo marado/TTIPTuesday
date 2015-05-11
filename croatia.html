@@ -1,5 +1,5 @@
 <html>
-<head><title>#TTIPTuesday</title> <!-- TRANSLATE //-->
+<head><title>#TTIPTuesday</title>
 <style>
 a.twitter-hashtag-button {
   display: inline-block;
@@ -44,13 +44,12 @@ a.twitter-hashtag-button:focus {
 </style>
 <script type="text/javascript" src="MEPs-on-Twitter.js"></script>
 <script>
-var country = "Portugal";	// CONFIGURE-MEPs-HERE (it's just changing the country name)
-var send = "Enviar";		// TRANSLATE
+var country = "Croatia"; // CONFIGURE-MEPs-HERE (it's just changing the country name)
+var send = "Pošalji";	// TRANSLATE
 
 document.title = "#TTIPTuesday - " + country;
 
-var tweetText = "diga n&atilde;o ao TTIP, Cidad&atilde;os e bem comum acima dos interesses corporativos!"; // TRANSLATE
-
+var tweetText = "#CETA i #TTIP = mnogo opasnosti, malo prednosti, i bez mogućnosti povratka. Ne isplati se. #SayNo"; // TRANSLATE
 function buildTweet(whom) {
 	html = "<a target='_blank' href='https://twitter.com/intent/tweet?button_hashtag=TTIPTuesday&text=";
 	html += "@"+whom+" ";
@@ -64,12 +63,12 @@ function buildTweet(whom) {
 
 function generateTable() {
 	var html = "<table><tr><td><strong>";
-	html += "Deputado"; // TRANSLATE
+	html += "Europski zastupnik"; // TRANSLATE
 	html += "</strong></td><td><strong>";
 	html += send;
 	html += "</strong></td></tr>";
-	for (var i=0; i < MEPsPortugal.length ; i++) { // CONFIGURE-MEPs-HERE (and in the next line)
-		html += "<tr><td><a href='http://twitter.com/" + MEPsPortugal[i] + "'>@" + MEPsPortugal[i] + "</a></td><td>" + buildTweet(MEPsPortugal[i]) + "</td></tr>";
+	for (var i=0; i < MEPsCroatia.length ; i++) { // CONFIGURE-MEPs-HERE (and in the next line)
+		html += "<tr><td><a href='http://twitter.com/" + MEPsCroatia[i] + "'>@" + MEPsCroatia[i] + "</a></td><td>" + buildTweet(MEPsCroatia[i]) + "</td></tr>";
 	}
 	html += "</table>";
 	document.getElementById("table-of-meps").innerHTML=html;
@@ -85,9 +84,9 @@ function loadSite() {
 <body onLoad="loadSite();">
 (This is the webpage for <span id="country"></span>. Check other countries <a href="index.html">here</a>.)
 <p/>
-Todas as ter&ccedil;as-feiras se enviam tweets aos Deputados do Parlamento Europeu sobre o #TTIP. Esta p&aacute;gina serve para facilitar esse trabalho. <!-- TRANSLATE //-->
+ Svaki utorak šaljemo tweetove o #TTIP europskim zastupnicima. Ova web stranica nam treba olakšati taj posao. <!-- TRANSLATE //-->
 <p/>
-O texto a ser enviado: <!-- TRANSLATE //-->
+Tekst za poslati: <!-- TRANSLATE //-->
 <span id="tweet-text"></span> 
 <p/>
 <div id="table-of-meps"></div>
