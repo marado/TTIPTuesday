@@ -1,5 +1,5 @@
 <html>
-  <head><title>CETA Check no Twitter</title> <!-- TRANSLATE //-->
+<head><title>#TTIPTuesday</title> <!-- TRANSLATE //-->
 <style>
 a.twitter-hashtag-button {
   display: inline-block;
@@ -47,17 +47,17 @@ a.twitter-hashtag-button:focus {
 var country = "Portugal";	// CONFIGURE-MEPs-HERE (it's just changing the country name)
 var send = "Enviar";		// TRANSLATE
 
-document.title = "CETA Check no Twitter - " + country; // TRANSLATE
+document.title = "#TTIPTuesday - " + country;
 
-var tweetText = "Na quarta-feira, rejeite o CETA. Cidad&atilde;os e bem comum acima dos interesses corporativos!"; // TRANSLATE
+var tweetText = "diga n&atilde;o ao TTIP, Cidad&atilde;os e bem comum acima dos interesses corporativos!"; // TRANSLATE
 
 function buildTweet(whom) {
-	html = "<a target='_blank' href='https://twitter.com/intent/tweet?button_hashtag=StopCETA&text=";
+	html = "<a target='_blank' href='https://twitter.com/intent/tweet?button_hashtag=TTIPTuesday&text=";
 	html += "@"+whom+" ";
 	var escaped=tweetText.replace(/@/g,"%40").replace(/#/g,"%23").replace(/ /g,"%20"); 
 	html += escaped;
 	html += "' class='twitter-hashtag-button'>";
-	html += send + " #StopCETA";
+	html += send + " #TTIPTuesday";
 	html += "</a>";
 	return html;
 }
@@ -85,7 +85,7 @@ function loadSite() {
 <body onLoad="loadSite();">
 (This is the webpage for <span id="country"></span>. Check other countries <a href="index.html">here</a>.)
 <p/>
-No dia 15 de Fevereiro de 2017, os Deputados do Parlamento Europeu ir&atilde;o votar o #CETA. Esta p&aacute;gina serve para enviar uma mensagem aos Deputados que ainda n&atilde;o indicaram o seu sentido de voto. <!-- TRANSLATE //-->
+Todas as ter&ccedil;as-feiras se enviam tweets aos Deputados do Parlamento Europeu sobre o #TTIP. Esta p&aacute;gina serve para facilitar esse trabalho. <!-- TRANSLATE //-->
 <p/>
 O texto a ser enviado: <!-- TRANSLATE //-->
 <span id="tweet-text"></span> 
